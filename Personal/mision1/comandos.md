@@ -29,7 +29,7 @@ dir -> consultar el directorio donde estoy ubicado y el directorio próximo
 
 python --version -> Consultar versión de python.  
 python -m venv env312 -> crear un entorno virtual en python.  
-`env312\Scripts\activate` -> Activar el entorno virtual de python.  
+`` -> Activar el entorno virtual de python.  
 `deactivate `-> desactiva el entorno virtual de python cuando no se va a utilizar.  
 `pip list` -> Permite ver las librerías que tiene python.
 ## Librerias para python
@@ -38,3 +38,5 @@ python -m venv env312 -> crear un entorno virtual en python.
 `pandas` -> Manejo de datos `pip install pandas`
 `numpy` -> cálculo matemático `pip install numpy`
 `matplolib` -> gráficos `pip install matplolib`
+pip freeze > requirements.txt lo crea 
+pip install -r requirements.txt lo intala 
