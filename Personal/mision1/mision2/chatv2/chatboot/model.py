@@ -7,6 +7,7 @@ MODEL_DIR = "Models"
 MODEL_PATH = os.path.join(MODEL_DIR, "chatbot_model.pkl")
 VECTORIZER_PATH = os.path.join(MODEL_DIR, "vectorizer.pkl")
 ANSWERS_PATH = os.path.join(MODEL_DIR, "answers.pkl")
+
 def buid_and_train_model(train_pairs):
     questions = [q for q, _ in train_pairs]  
     answers = [a for _, a in train_pairs]
@@ -47,3 +48,8 @@ def load_model():
         print("⚠️ No hay un modelo guardado.sera nesesario encontrarlo ")
         return None, None, None
     
+
+def predict_answer(model, vectorizer, unique_answers, user_text):
+    x = vectorizer.transform([user_text])
+    label = model.predict(x)[0]
+    return unique_answers[label]
